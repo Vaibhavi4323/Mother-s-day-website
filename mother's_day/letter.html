@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Your Letter</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<canvas id="petals"></canvas>
+
+<!-- Music (autoplay on click) -->
+<audio id="bgMusic" src="music/tenu.mp3" preload="auto"></audio>
+
+<div class="container letter-container">
+  <h2>Dear Mumma,</h2>
+  <p>Thank you for your endless love and magic.<br>
+  You are the heart of our home.🌸</p>
+
+  <div class="photos">
+    <img src="images/mom_1.jpg" />
+    <br>
+    <br>
+    <img src="images/mom_2.jpg" />
+    <br>
+    <br>
+    <img src="images/mom_3.jpg" />
+  </div>
+
+  <p>I love you more than words can say. Happy Mother's Day! 💖</p>
+</div>
+
+<script src="petals.js"></script>
+<script>
+  window.onload = function () {
+    const music = document.getElementById("bgMusic");
+    music.play().catch(() => {
+      document.body.addEventListener('click', () => {
+        music.play();
+      }, { once: true });
+    });
+  };
+</script>
+</body>
+</html>
